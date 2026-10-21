@@ -8,8 +8,7 @@ OWNER_ID = 1234567890 # Замени на свой Telegram ID
 
 bot = telebot.TeleBot(TOKEN)
 
-# Храним состояние пользователей
-waiting_for_message = set()
+waiting_for_message = set() # Храним состояние пользователей
 
 
 # ===== ПРИВЕТСТВИЕ БОТА =====
@@ -66,7 +65,10 @@ def receive_message(message):
             "Чтобы начать заново, напишите /start."
         )
         return
+
+    
 # ===== ОТПРАВКА СООБЩЕНИЯ БОТОМ =====
+    
     name = user.first_name or "Не указано"
     surname = user.last_name or ""
     username = f"@{user.username}" if user.username else "нет"
@@ -98,8 +100,8 @@ def receive_message(message):
 
         waiting_for_message.discard(user.id)
 
-    except Exception as error:
-        print("Ошибка отправки:", error)
+    except Exception as err:
+        print("Ошибка отправки:", err)
 
         bot.send_message(
             message.chat.id,
@@ -110,6 +112,6 @@ def receive_message(message):
 
 # ===== ЗАПУСК БОТА =====
 
-print("Секретарь Евгения Николаевича запущен!")
-
-bot.infinity_polling(skip_pending=True)
+if __name__ == '__main__': # Проверяем как запущен файл
+    print("Секретарь Евгения Николаевича запущен!")
+    bot.infinity_polling(skip_pending=True)
