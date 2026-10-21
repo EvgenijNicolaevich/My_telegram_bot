@@ -3,8 +3,8 @@ from datetime import datetime
 
 # ===== НАСТРОЙКИ БОТА=====
 
-TOKEN = "TOKEN_BOT" # В ковычки запешите токен своего бота
-OWNER_ID = 1234567890 # Замени на свой Telegram ID
+TOKEN = "TOKEN_BOT" # В ковычки запешите токен своего telegram бота (можно бесплатно получить на @BotFather)
+OWNER_ID = 1234567890 # Замени на свой Telegram ID (можно узнать на @UserInfo)
 
 bot = telebot.TeleBot(TOKEN)
 
