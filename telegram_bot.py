@@ -8,7 +8,7 @@ OWNER_ID = 1234567890 # Замени на свой Telegram ID (можно уз�
 
 bot = telebot.TeleBot(TOKEN)
 
-waiting_for_message = set() # Храним состояние пользователей
+waiting_for_message = set() # Храним информацию о пользователе
 
 
 # ===== ПРИВЕТСТВИЕ БОТА =====
@@ -39,7 +39,7 @@ def start(message):
 
 @bot.message_handler(commands=['cancel'])
 def cancel(message):
-    waiting_for_message.discard(message.from_user.id)
+    waiting_for_message.discard(message.from_user.id) # Удаляем информацию о пользователе
 
     bot.send_message(
         message.chat.id,
