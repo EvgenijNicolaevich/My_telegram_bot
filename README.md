@@ -20,6 +20,7 @@ Telegram‑бот для передачи сообщений владельцу.
 Требуется Python 3.7+ и библиотека `pyTelegramBotAPI`.
 
 Если запускаешь на компьютере:
+
 pip install pyTelegramBotAPI
 
 Если запускаеш на смартфоне:
